@@ -1,4 +1,4 @@
->>> Aquí puedes ver el deployment: 
+>>> Aquí puedes ver el deployment: https://camoralesh27.github.io/technicalDocumentationPage-freeCodeCamp/ 
 
 Objective: Build an app that is functionally similar to https://technical-documentation-page.freecodecamp.rocks
 
