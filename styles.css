@@ -1,29 +1,45 @@
-/* Ordenar caja */
+/** Ordenar caja */
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
 
+*, *:before, *:after {
+  box-sizing: inherit;
+    
+   
+}
 
-/* Variables globales */
+/* ///////////////////////////////////////////// */
+
+/** Variables globales */
 :root{
     /* Fuentes */
-    --fuente-principal: "Open Sans", Arial, sans-serif;
+    --fuente-principal: 'PT Sans', sans-serif;
 
     /* Colores */
     --header: #000000;
     --texto: #4d4e53;
+    --border: #4d4e53;
+    --background-code: #e6e6e6; 
 }
 
-/* Generales */
+/* ///////////////////////////////////////////// */
+
+/** Generales */
 body{
   font-family: var(--fuente-principal);
   font-size: 1.5rem;
-  width: 100%;
-  margin: auto;
+  line-height: 1.4;
+  width: 90%;
+  margin: 0 auto;
+  color: var(--texto);
+}
+
+#navbar > header{
+  text-align: center;
+  padding: 2rem 0;
 }
 
 header{
@@ -32,54 +48,58 @@ header{
   font-size: 2.5rem;
 }
 
-p{
-  color: var(--texto);
-}
-
 code{
   display: block;
-  background-color: #f7f7f7;
+  background-color: var(--background-code);
+  
+  margin: 1rem auto;
+  width: max-content;
 }
 
-/* Barra navegacion */
+/* /////////////////////////////////////////////// */
+
+/** Barra navegacion */
 #navbar{
   position: fixed;
   top: 0;
-  left: 0;
+  left: 2rem;
   height: 100%;
-  width: 25%;
-  border-right: 2px solid #4d4e53;
+  width: 20%;
+  border-right: 2px solid var(--border);
+  border-left: 2px solid var(--border);
 }
 
-@media (max-width: 768px) {
+  /* Barra de navegacion responsiva */
+/*  @media (max-width: 768px) {
   #navbar{
     height: 10%;
     width: 100%;
-    text-align: center;
-    
-  }
+    text-align: center; 
+  } 
 
   #main-doc{
     top:250px;
     width: 100%;
     margin: 0;
   }
-}
+} */
 
+#navbar header{
+  height: 6rem;
+  
+}
 
 #navbar ul{  
   padding-inline-start: 0; /* Quitar sangria de ul */
-  
-  
 }
 
 #navbar li{
   list-style: none;
-  border-bottom: 1px solid #4d4e53;
-  border-top: 1px solid #4d4e53;
+  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
   height: 4rem;
   display: block;
-  padding: 10px 30px;
+  padding: 10px 10px;
   cursor: pointer;
 }
 
@@ -87,16 +107,27 @@ code{
   color: var(--texto);
   text-decoration: none;
   display: block;
-  
 }
 
+/* /////////////////////////////////////////////////// */
 
-
-/* Contenido Principal */
+/** Contenido Principal */
 #main-doc{
   position: absolute;
-  left: 25%;
-  width:75%;
+  left: 22%;
+  width: 75%;
   padding: 20px;
+  border-right: 2px solid var(--border);
+}
 
+.main-section{
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom:  2px dashed var(--border);
+}
+
+.main-section header{
+  margin-bottom: .5rem;
+  border-bottom: 2px solid var(--border);
+  width: max-content;
 }
