@@ -50,7 +50,8 @@ header{
   font-size: 2.5rem;
 }
 
-.code{
+code{
+  display: block;
   font-family: 'Fira Code', monospace;
   background-color: var(--background-code);
   margin: 1rem auto;
@@ -73,9 +74,9 @@ header{
   top: 0;
   left: 2rem;
   height: 100%;
-  width: 20%;
+  width: 21%;
   border-left: 2px solid var(--border);
-  background-color: var(--backgroun-main);
+ /*  background-color: var(--backgroun-main); */
 }
 
 #navbar header{
@@ -107,12 +108,26 @@ header{
   text-overflow: ellipsis; /* corta texto con tres puntos */
 }
 
+.checkbtn{
+  font-size: 30px;
+  position: absolute;
+  right: 3px;
+  margin-right: 40px;
+  line-height: 56px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+
 /* Barra de navegacion responsiva */
 @media (max-width: 1023px) {
   #navbar header{
     height: 3rem;
-    font-size: 1.7rem;
-    padding: 1rem 0 0 0;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    margin-left: -1rem;
   }
 
   #navbar ul li{
@@ -127,8 +142,38 @@ header{
     left: 0;
     width: 100%;
     text-align: center;
-    border-left: 2px solid var(--border);
+   /*  border: 2px solid var(--border); */
   }
+  
+  #navbar header{
+    border: 2px solid var(--border);
+    padding: 10px 0 45px 0;
+    background-color: var(--backgroun-main);
+    z-index: 1;
+    font-size: 2.5rem;
+  }
+
+  .checkbtn{
+    display: block;
+  }
+
+  ul{
+    position: fixed;
+    width: 100%;
+    /* height: 100vh; */
+    background-color: #dcd7d7;
+    z-index: 1;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    border-right: 2px solid var(--border);
+    top: 4.3rem;
+  }
+
+  #check:checked ~ ul{
+    left: 0;
+  }
+
 }
 
 /* /////////////////////////////////////////////////// */
@@ -136,13 +181,13 @@ header{
 /** Contenido Principal */
 #main-doc{
   position: absolute;
-  left: 21%;
+  z-index: -1;
+  left: 23%;
   width: 75%;
   padding: 20px;
   border-right: 2px solid var(--border);
   border-left: 2px solid var(--border);
-  /*! z-index: 1; */
-  background-color: var(--backgroun-main);
+  /* background-color: var(--backgroun-main); */
 }
 
 .main-section{
@@ -159,11 +204,9 @@ header{
 
 @media (max-width: 767px ) {
   #main-doc{
-    margin-top: 50rem;
+    margin-top: 5rem;
     left: 0%;
     width: 100%;
-
   }
-
-  
+ 
 }
