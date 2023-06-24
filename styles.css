@@ -112,8 +112,9 @@ code{
   font-size: 30px;
   position: absolute;
   right: 3px;
+  top: 8px;
   margin-right: 40px;
-  line-height: 56px;
+  /* line-height: 56px; */
   cursor: pointer;
   display: none;
 }
